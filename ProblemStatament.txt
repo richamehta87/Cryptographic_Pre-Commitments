@@ -1,0 +1,29 @@
+Suppose we wish to create the prototype for a service that allows the posting of cryptographic pre-commitments
+(https://en.wikipedia.org/wiki/Commitment_scheme). Pre-commitments are a handy tool that allows you to reveal the existence of a piece of information without necessarily revealing the contents of that information as well.
+
+Requirements:
+* As a committer I want to post secret messages.
+* As a committer I want to uniquely reference my messages, such that I can ask 3rd parties to verify my posts.
+* As a committer I want to ensure that the plaintext of my messages are not readable until I make them so.
+* As a committer I want a way to irrevocably make an individual secret message publicly readable.
+* As a 3rd party I want to verify when a message was posted and that it hasn't been tampered with since.
+* As a 3rd party or committer I want this API to be consumable using no required software beyond cURL.
+* This exercise assumes that all incoming connections were terminated with a TLS connection.
+
+
+Please see the readme file for description of the python files and examples of how to run this service, how to run the tests, 
+and how to interact with the service via curl.
+
+The readme also explains the algorithms used and what kind of guarantees the service can give to 
+both the person posting the pre-commitment and to the 3rd parties verifying that pre-commitment.
+
+
+
+
+Any RESTful API code is usually judged on the following criteria:
+* API Design: How clean is the API which you are exposing? What types of clients will be able to easily consume it?
+* Clarity: Does your README and other documentation clearly and concisely explain the problem and your solution? If you've made any tradeoffs or cut down scope is that clearly called out?
+* Code Quality: Is your code simple and easy to follow? Does it follow well accepted idioms for the language / frameworks you've chosen to use?
+* Correctness: Does the service fulfill its requirements? If not, is that documented in the README?
+* Security: Are there any obvious vulnerabilities with your implementation?
+* Testing: Is your testing thorough? Is it brittle? Are there unit tests, integration tests or both?
